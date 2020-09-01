@@ -6,10 +6,10 @@
     "authors": [
         {
             "name": "pasquale pellicani",
-            "email": "pellicanipasquale@gmail.com"
+            "email": "pellicanipasquale@gmail.com",
+            "homepage": "http://www.paskuale.it/"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "autoload": {
             "psr-4": {
