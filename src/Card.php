@@ -1,6 +1,6 @@
 <?php
 
-namespace paskuale75\card;
+namespace paskuale75\metronic;
 
 use yii\base\Widget;
 use yii\helpers\Html;
