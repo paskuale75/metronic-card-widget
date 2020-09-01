@@ -10,11 +10,13 @@
             "homepage": "http://www.paskuale.it/"
         }
     ],
-    "require": {
-        "autoload": {
-            "psr-4": {
-                "paskuale75\\card\\": "src"
-            }
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "paskuale75\\card\\": "src"
         }
+    },
+    "require": {
+        
     }
 }
