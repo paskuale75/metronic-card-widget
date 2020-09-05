@@ -40,8 +40,8 @@ class Card extends Widget
             $title = $label;
             $toolbar = $this->drawToolbar();
             $title = Html::tag('div', $title, ['class' => 'card-title']);
-            $header = Html::tag('div', $title, ['class' => 'card-header']);
-            $header .= Html::tag('div', $toolbar, ['class' => 'card-toolbar']);
+            $toolbar = Html::tag('div', $toolbar, ['class' => 'card-toolbar']);
+            $header = Html::tag('div', $title.$toolbar, ['class' => 'card-header']);
         }
         return $header;
     }
