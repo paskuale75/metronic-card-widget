@@ -40,7 +40,8 @@ class Card extends Widget
             $title = $label;
             $toolbar = $this->drawToolbar();
             $title = Html::tag('div', $title, ['class' => 'card-title']);
-            $header = Html::tag('div', $title.$toolbar, ['class' => 'card-header']);
+            $header = Html::tag('div', $title, ['class' => 'card-header']);
+            $header .= Html::tag('div', $toolbar, ['class' => 'card-toolbar']);
         }
         return $header;
     }
@@ -50,14 +51,12 @@ class Card extends Widget
         $toolbar = false;
 
         if (ArrayHelper::keyExists('toolbar', $this->options, false)) {
-            echo Html::beginTag('div', ['class' => 'card-toolbar']);
             if (isset($this->options['toolbar']['buttons'])) {
                 $buttons = $this->options['toolbar']['buttons'];
                 foreach ($buttons as $button) {
                     $toolbar .= $button;
                 }
             }
-            echo Html::endTag('div');
         }
         return $toolbar;
     }
