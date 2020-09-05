@@ -18,6 +18,7 @@ class Card extends Widget
 
         echo Html::beginTag('div', ['class' => 'card card-custom gutter-b']);
         echo $this->drawHeader();
+        echo $this->drawToolbar();
         echo Html::beginTag('div', ['class' => 'card-body']);
     }
 
@@ -41,5 +42,22 @@ class Card extends Widget
             $header = Html::tag('div', $title, ['class' => 'card-header']);
         }
         return $header;
+    }
+
+    private function drawToolbar()
+    {
+        $toolbar = false;
+
+        if (ArrayHelper::keyExists('toolbar', $this->options, false)) {
+            Html::beginTag('div', ['class' => 'card-tolbar']);
+            if (isset($this->options['toolabar']['buttons'])) {
+                $buttons = $this->options['toolabar']['buttons'];
+                foreach ($buttons as $button) {
+                    echo $button;
+                }
+            }
+            Html::endTag('div');
+        }
+        return $toolbar;
     }
 }
