@@ -32,12 +32,13 @@ class Card extends Widget
     private function drawHeader()
     {
         $header = false;
-        $toolbar = $this->drawToolbar();
+        $toolbar = false;
 
         if (ArrayHelper::keyExists('title', $this->options, false)) {
             $subTitle = Html::tag('small', $this->options['subTitle']);
             $label = Html::tag('h3', $this->options['title'] . $subTitle, ['class' => 'card-label']);
             $title = $label;
+            $toolbar = $this->drawToolbar();
             $title = Html::tag('div', $title, ['class' => 'card-title']);
             //$body = $this->drawBody($this->options['body']);
             $header = Html::tag('div', $title.$toolbar, ['class' => 'card-header']);
@@ -50,14 +51,14 @@ class Card extends Widget
         $toolbar = false;
 
         if (ArrayHelper::keyExists('toolbar', $this->options, false)) {
-            echo Html::beginTag('div', ['class' => 'card-toolbar']);
+            Html::beginTag('div', ['class' => 'card-toolbar']);
             if (isset($this->options['toolbar']['buttons'])) {
                 $buttons = $this->options['toolbar']['buttons'];
                 foreach ($buttons as $button) {
                     echo $button;
                 }
             }
-            echo Html::endTag('div');
+            Html::endTag('div');
         }
         return $toolbar;
     }
