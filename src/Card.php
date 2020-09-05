@@ -50,8 +50,8 @@ class Card extends Widget
 
         if (ArrayHelper::keyExists('toolbar', $this->options, false)) {
             Html::beginTag('div', ['class' => 'card-tolbar']);
-            if (isset($this->options['toolabar']['buttons'])) {
-                $buttons = $this->options['toolabar']['buttons'];
+            if (isset($this->options['toolbar']['buttons'])) {
+                $buttons = $this->options['toolbar']['buttons'];
                 foreach ($buttons as $button) {
                     echo $button;
                 }
