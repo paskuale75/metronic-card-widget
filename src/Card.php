@@ -40,7 +40,6 @@ class Card extends Widget
             $title = $label;
             $toolbar = $this->drawToolbar();
             $title = Html::tag('div', $title, ['class' => 'card-title']);
-            //$body = $this->drawBody($this->options['body']);
             $header = Html::tag('div', $title.$toolbar, ['class' => 'card-header']);
         }
         return $header;
@@ -55,7 +54,7 @@ class Card extends Widget
             if (isset($this->options['toolbar']['buttons'])) {
                 $buttons = $this->options['toolbar']['buttons'];
                 foreach ($buttons as $button) {
-                    echo $button;
+                    $toolbar .= $button;
                 }
             }
             Html::endTag('div');
