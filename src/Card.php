@@ -41,7 +41,7 @@ class Card extends Widget
             $toolbar = $this->drawToolbar();
             $title = Html::tag('div', $title, ['class' => 'card-title']);
             $toolbar = Html::tag('div', $toolbar, ['class' => 'card-toolbar']);
-            $header = Html::tag('div', $title.$toolbar, ['class' => 'card-header']);
+            $header = Html::tag('div', $title . $toolbar, ['class' => 'card-header']);
         }
         return $header;
     }
@@ -59,5 +59,24 @@ class Card extends Widget
             }
         }
         return $toolbar;
+    }
+
+
+    private function drawFooter()
+    {
+        $footer = false;
+
+        if (ArrayHelper::keyExists('footer', $this->options, false)) {
+            $footer .=Html::beginTag('div', ['class' => $this->options['footer']['class']]);
+            if (isset($this->options['footer']['buttons'])) {
+                $buttons = $this->options['footer']['buttons'];
+                foreach ($buttons as $button) {
+                    $footer .= $button;
+                }
+            }
+
+            $footer .=Html::endTag('div');
+        }
+        return $footer;
     }
 }
