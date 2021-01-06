@@ -24,6 +24,7 @@ class Card extends Widget
     public function run()
     {
         echo Html::endTag('div'); // End card-body
+        echo $this->drawFooter();
         echo Html::endTag('div'); // End card section
     }
 
