@@ -16,7 +16,7 @@ class Card extends Widget
     {
         //parent::init();
 
-        echo Html::beginTag('div', $this->options['class']);
+        echo Html::beginTag('div', $this->options);
         echo $this->drawHeader();
         echo Html::beginTag('div', ['class' => 'card-body']);
     }
