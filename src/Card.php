@@ -10,13 +10,13 @@ use yii\helpers\ArrayHelper;
 class Card extends Widget
 {
 
-    public $options = [];
+    public $options = ['class' => 'card'];
 
     public function init()
     {
         //parent::init();
 
-        echo Html::beginTag('div', ['class' => 'card card-custom gutter-b']);
+        echo Html::beginTag('div', $this->options['class']);
         echo $this->drawHeader();
         echo Html::beginTag('div', ['class' => 'card-body']);
     }
